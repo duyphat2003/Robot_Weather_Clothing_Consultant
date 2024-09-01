@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="VaM-KG3s-EKtbWppNthiwA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.google.com/" CVScreenId="8c1260b2-732c-4859-b9fe-2d6ab4f95806" CvElementArea="672, 455, 588, 51" CvType="InputBox" DesignTimeRectangle="724, 499, 403, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='APjFqb' tag='TEXTAREA' type='' class='gLFyf' aaname='Tìm kiếm' /&gt;" Guid="eec900ef-8026-438c-bb36-e82b309d3c67" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="dbdf650cd6ae5fcc5ff30cb46485d897.png" xmlns="">0gK-q5tv9Q0yQJxpuy9FvRg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
