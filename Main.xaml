@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1053,821" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1053,3014" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -109,7 +109,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,756" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="662,2949" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CityName" />
       <Variable x:TypeArguments="x:String" Name="Weather" />
@@ -122,19 +122,25 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Get City Name" sap:VirtualizedContainerService.HintSize="354,324" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter a city name" OptionsString="Ho Chi Minh;Ha Noi;Đa Nang;Can Tho;Cao Lanh;Ca Mau;Tra Vinh;Bien Hoa" Title="Get the weather">
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog to Get City Name" sap:VirtualizedContainerService.HintSize="600,324" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter a city name" OptionsString="Ho Chi Minh;Ha Noi;Đa Nang;Can Tho;Cao Lanh;Ca Mau;Tra Vinh;Bien Hoa" Title="Get the weather">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">CityName</CSharpReference>
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">
+            <CSharpReference.Result>
+              <OutArgument x:TypeArguments="Location(x:String)" />
+            </CSharpReference.Result>CityName</CSharpReference>
         </OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <WriteLine DisplayName="Write City Name" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="WriteLine_1">
+    <WriteLine DisplayName="Write specified city name" sap:VirtualizedContainerService.HintSize="600,122" sap2010:WorkflowViewState.IdRef="WriteLine_1" TextWriter="{x:Null}">
       <InArgument x:TypeArguments="x:String">
-        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">CityName</CSharpValue>
+        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">
+          <CSharpValue.Result>
+            <OutArgument x:TypeArguments="x:String" />
+          </CSharpValue.Result>CityName</CSharpValue>
       </InArgument>
     </WriteLine>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" ContinueOnError="True" DisplayName="Use Edge Google" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c395e5ad-9935-4ed0-ad93-41d4d3e5f423" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" ContinueOnError="True" DisplayName="Use Edge Google" sap:VirtualizedContainerService.HintSize="600,1650" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c395e5ad-9935-4ed0-ad93-41d4d3e5f423" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -210,13 +216,16 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <uix:NGetText DisplayName="Get Text - Temperature" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="c395e5ad-9935-4ed0-ad93-41d4d3e5f423" Version="V4">
+            <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Temperature From Google Search" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NGetText_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="c395e5ad-9935-4ed0-ad93-41d4d3e5f423" ScrapingOptions="{x:Null}" Timeout="{x:Null}" Version="V4" WordsInfo="{x:Null}">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=Weather+in+Cao+Lanh+in+Vietnam&amp;sca_esv=edeca30911a1fd73&amp;sca_upv=1&amp;biw=1745&amp;bih=914&amp;sxsrf=ADLYWIJFp7Ub7hIN-Hf6NVLScx_UVWejUw%3A1725163173742&amp;ei=pebTZsj7LLje2roPqcC20AI&amp;ved=0ahUKEwiI4pnR7aCIAxU4r1YBHSmgDSoQ4dUDCBA&amp;uact=5&amp;oq=Weather+in+Cao+Lanh+in+Vietnam&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiHldlYXRoZXIgaW4gQ2FvIExhbmggaW4gVmlldG5hbTIIEAAYogQYiQUyCBAAGIAEGKIEMggQABiiBBiJBTIIEAAYgAQYogRInxhQvQ1YsxVwAXgAkAEAmAF8oAGjBqoBAzAuN7gBA8gBAPgBAZgCBaAC1QPCAgsQABiwAxiiBBiJBcICCxAAGIAEGLADGKIEwgIHECMYsAIYJ5gDAIgGAZAGBJIHAzEuNKAHshM&amp;sclient=gws-wiz-serp" CVScreenId="43086ee5-7cad-4818-9a24-2097e3a4d0b6" CvTextArea="337, 335, 58, 43" CvType="AnyWordGroup" DesignTimeRectangle="338, 324, 57, 66" DesignTimeScaleFactor="1.100000023841858" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='wob_tm' tag='SPAN' type='' class='wob_t q8U8x' /&gt;" Guid="2635d8f2-6ec3-4cb8-9f09-005ccc11237f" InformativeScreenshot="a10810174f8726a7b1323f6148fc0c59.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Weather in Cao Lanh in Vietnam - Tìm trên Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
               </uix:NGetText.Target>
               <uix:NGetText.TextString>
                 <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">Temperature</CSharpReference>
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">
+                    <CSharpReference.Result>
+                      <OutArgument x:TypeArguments="Location(x:String)" />
+                    </CSharpReference.Result>Temperature</CSharpReference>
                 </OutArgument>
               </uix:NGetText.TextString>
             </uix:NGetText>
@@ -227,7 +236,7 @@
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
-            <uix:NGetText DisplayName="Get Text 'Có mưa'" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c395e5ad-9935-4ed0-ad93-41d4d3e5f423" Version="V4">
+            <uix:NGetText DisplayName="Get Text Weather" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c395e5ad-9935-4ed0-ad93-41d4d3e5f423" Version="V4">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=Weather+in+Tra+Vinh+in+Viet+Nam&amp;sca_esv=edeca30911a1fd73&amp;sca_upv=1&amp;sxsrf=ADLYWIKpifRNDJoh35j4R4Atm5T2kBSilA%3A1725163734598&amp;source=hp&amp;ei=1ujTZoGVIufn1e8PmqjnkAE&amp;iflsig=AL9hbdgAAAAAZtP25qcR-Fa9vY7mGAnl5hAk-bd6WttF&amp;ved=0ahUKEwiB2M_c76CIAxXnc_UHHRrUGRIQ4dUDCBc&amp;uact=5&amp;oq=Weather+in+Tra+Vinh+in+Viet+Nam&amp;gs_lp=Egdnd3Mtd2l6Ih9XZWF0aGVyIGluIFRyYSBWaW5oIGluIFZpZXQgTmFtMgQQIRgVMgQQIRgVSJcJUChYjgFwAXgAkAEBmAGUAaABvgSqAQMwLjS4AQPIAQD4AQGYAgSgArMDqAIKwgIHECMYJxjqAsICDRAuGNEDGMcBGCcY6gLCAgUQIRigAcICBxAhGKABGAqYAwSSBwMxLjOgB-4H&amp;sclient=gws-wiz" CVScreenId="5cb19a06-1c2f-4914-a096-8d8a73567341" CvTextArea="913, 427, 66, 16" CvType="AnyWordGroup" DesignTimeRectangle="915, 426, 63, 20" DesignTimeScaleFactor="1.100000023841858" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='wob_dc' tag='SPAN' type='' class='' /&gt;" Guid="60bc2bcc-f61a-4ab0-b7eb-37fe3d777378" InformativeScreenshot="cbe52b6cb994f4956bf4bd8305ae6e50.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Weather in Tra Vinh in Viet Nam - Tìm trên Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
               </uix:NGetText.Target>
@@ -252,15 +261,15 @@
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <Flowchart DisplayName="Analyze the weather" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart DisplayName="Analyze the weather" sap:VirtualizedContainerService.HintSize="600,657" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <av:Point x:Key="ShapeLocation">275,35</av:Point>
           <av:Size x:Key="ShapeSize">50,50</av:Size>
@@ -427,7 +436,7 @@
       <x:Reference>__ReferenceID3</x:Reference>
       <x:Reference>__ReferenceID4</x:Reference>
     </Flowchart>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Get Outfit and Gear Suggestion" sap:VirtualizedContainerService.HintSize="600,108" sap2010:WorkflowViewState.IdRef="MessageBox_1">
       <ui:MessageBox.Text>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">$"The temperature is {Temperature} degrees Fahrenheit. \nThe weather is {Weather}.\nOutfit Suggestion: {OutfitSuggestion}.\nGear: {RainGear}"</CSharpValue>
